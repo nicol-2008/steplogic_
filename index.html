@@ -2,52 +2,79 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Inicio | StepL∞gic</title>
-    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StepL∞gic | Metaverso</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <nav>
-        <a href="index.html" class="logo-container">StepL<span>∞</span>gic</a>
+        <a href="#inicio" class="logo-container">StepL<span>∞</span>gic</a>
         <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="misiones.html">Misiones</a></li>
-            <li><a href="mundos.html">Mundos</a></li>
-            <li><a href="indicaciones.html">Indicaciones</a></li>
-            <li><a href="equipo.html">Equipo</a></li>
-            <li><a href="contacto.html">Contáctanos</a></li>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#misiones">Misiones</a></li>
+            <li><a href="#mundos">Mundos</a></li>
+            <li><a href="#indicaciones">Indicaciones</a></li>
+            <li><a href="#equipo">Equipo</a></li>
+            <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
 
-    <div class="container">
-        <h1>Stepl<span>∞</span>gic</h1>
-        <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: auto;">
-            Es una experiencia inmersiva en realidad virtual que transforma el aprendizaje en una aventura interactiva. 
-            A través de acertijos, misiones y desafíos, los usuarios desarrollan habilidades en programación y bases de datos.
-        </p>
-
-        <div class="slider-container">
-            <div class="slides">
-                <div class="slide"><img src="IMG/inicio2.jpg"></div>
-                <div class="slide"><img src="IMG/inicio1.jpg"></div>
-                <div class="slide"><img src="IMG/inicio4.jpg"></div>
-                <div class="slide"><img src="IMG/inicio5.jpg"></div>
-                <div class="slide"><img src="IMG/inicio6.jpg"></div>
-            </div>
-        </div>
-
-        <div style="background: #001f3f; color: white; padding: 40px; border-radius: 15px; margin-top: 30px;">
-            <p>Además, en Stepl<span>∞</span>gic también creamos experiencias personalizadas para empresas, emprendimientos y espacios educativos que buscan innovar en la forma de enseñar.</p>
-        </div>
-    </div>
+    <main id="main-content">
+        <section id="inicio" class="panel section-reveal"></section>
+        <section id="misiones" class="panel section-reveal"></section>
+        <section id="mundos" class="panel section-reveal"></section>
+        <section id="indicaciones" class="panel section-reveal"></section>
+        <section id="equipo" class="panel section-reveal"></section>
+        <section id="contacto" class="panel section-reveal"></section>
+    </main>
 
     <footer>
         <div class="footer-logo">© StepL<span>∞</span>gic</div>
-        <div class="social-links">
-            <p>Follow Us</p>
+        <div class="socials">
             <a href="#">Tiktok / @StepLogic_</a> | 
             <a href="#">Instagram / @StepLogic_</a>
         </div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        // Función para cargar los archivos externos dentro del scroll único
+        async function loadSections() {
+            const sections = ['inicio', 'misiones', 'mundos', 'indicaciones', 'equipo', 'contacto'];
+            for (const section of sections) {
+                const response = await fetch(`${section}.html`);
+                const text = await response.text();
+                // Extraemos solo el contenido dentro del body de cada archivo
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(text, 'text/html');
+                const content = doc.querySelector('.container') || doc.body;
+                document.getElementById(section).innerHTML = content.innerHTML;
+            }
+            initAnimations(); // Iniciar GSAP después de cargar todo
+        }
+
+        function initAnimations() {
+            gsap.registerPlugin(ScrollTrigger);
+            gsap.utils.toArray('.section-reveal').forEach(section => {
+                gsap.from(section, {
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top 80%",
+                        toggleActions: "play none none reverse"
+                    },
+                    opacity: 0,
+                    y: 50,
+                    duration: 1,
+                    ease: "power2.out"
+                });
+            });
+        }
+
+        window.onload = loadSections;
+    </script>
 </body>
 </html>
