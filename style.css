@@ -1,267 +1,227 @@
 /* =========================================
-   1. VARIABLES Y CONFIGURACIÓN BASE
+   1. VARIABLES Y CONFIGURACIÓN PREMIUM
    ========================================= */
 :root {
-    --azul-logo: #2690F0;      /* Celeste StepLogic */
-    --azul-oscuro: #001f3f;    /* Azul profesional */
-    --negro-fondo: #0b0b0b;    /* Negro elegante para secciones oscuras */
-    --blanco: #ffffff;
-    --gris-claro: #f8f9fa;
-    --fuente-principal: 'Inter', 'Helvetica', Arial, sans-serif;
-}
-
-html {
-    scroll-behavior: smooth; /* Permite el scroll suave al hacer clic en el menú */
+    --primary: #2690F0;      /* Celeste StepLogic */
+    --primary-dark: #1a6fb8;
+    --dark: #0a0a0a;         /* Negro Profundo */
+    --light: #ffffff;
+    --gray-bg: #f8fafc;
+    --text-main: #1e293b;
+    --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--fuente-principal);
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 body {
-    background-color: var(--blanco);
-    color: var(--negro-fondo);
-    line-height: 1.6;
+    background: var(--light);
+    color: var(--text-main);
     overflow-x: hidden;
 }
 
 /* =========================================
-   2. NAVEGACIÓN (GLASSMORPHISM)
+   2. NAVEGACIÓN Y MENÚ HAMBURGUESA
    ========================================= */
-nav {
-    background: rgba(0, 0, 0, 0.85); /* Fondo oscuro con transparencia */
-    backdrop-filter: blur(12px);    /* Efecto de desenfoque profesional */
-    -webkit-backdrop-filter: blur(12px);
+.nav-glass {
+    position: fixed;
+    top: 0; width: 100%;
+    padding: 1.2rem 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
-    position: fixed;
-    width: 100%;
-    top: 0;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     z-index: 2000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-.logo-container {
-    color: var(--blanco);
-    font-size: 1.8rem;
-    font-weight: bold;
+.logo {
+    font-size: 1.6rem;
+    font-weight: 800;
     text-decoration: none;
-    display: flex;
-    align-items: center;
+    color: var(--dark);
+    z-index: 2001;
 }
 
-.logo-container span {
-    color: var(--azul-logo);
-    font-size: 2.2rem;
-    margin: 0 2px;
-}
+.logo span { color: var(--primary); }
 
-nav ul {
+/* Menú para Escritorio */
+.nav-links {
     display: flex;
     list-style: none;
+    gap: 2.5rem;
 }
 
-nav ul li a {
-    color: var(--blanco);
+.nav-links a {
     text-decoration: none;
-    margin-left: 25px;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 1px;
-    transition: 0.3s ease;
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    position: relative;
 }
 
-nav ul li a:hover {
-    color: var(--azul-logo);
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; left: 0;
+    width: 0%; height: 2px;
+    background: var(--primary);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after { width: 100%; }
+
+/* Botón Hamburguesa (Solo Móvil) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 2001;
+    border: none;
+    background: none;
+}
+
+.hamburger span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: var(--dark);
+    border-radius: 10px;
+    transition: var(--transition);
 }
 
 /* =========================================
-   3. ESTRUCTURA DE SECCIONES (SINGLE PAGE)
+   3. SECCIONES Y CONTENEDORES
    ========================================= */
-.panel {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 100px 20px; /* Espacio para que el contenido no choque con el menú */
-}
-
 .container {
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    width: 100%;
 }
 
-.bg-dark {
-    background-color: var(--negro-fondo);
-    color: var(--blanco);
-}
-
-.bg-light {
-    background-color: var(--gris-claro);
-}
-
-/* Títulos con GSAP (clase reveal) */
-h1 {
-    font-size: clamp(3rem, 8vw, 5rem);
-    color: var(--azul-oscuro);
-    margin-bottom: 20px;
-}
-
-h2 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.bg-dark h2 {
-    color: var(--azul-logo);
-}
-
-/* =========================================
-   4. ELEMENTOS ESPECÍFICOS (GSAP READY)
-   ========================================= */
-
-/* Mundos */
-.world-item {
+section {
+    padding: 120px 0;
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    gap: 50px;
-    margin-bottom: 100px;
 }
 
-.world-item:nth-child(even) {
-    flex-direction: row-reverse;
+/* Hero Section */
+.hero-section {
+    padding-top: 150px;
+    background: radial-gradient(circle at top right, rgba(38, 144, 240, 0.05), transparent);
 }
 
-.world-item img {
-    width: 50%;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
 }
 
-.world-item .text {
-    width: 50%;
+.hero-content h1 {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
 }
 
-/* Equipo */
+.hero-content p {
+    font-size: 1.2rem;
+    color: #64748b;
+    max-width: 500px;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 40px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+}
+
+/* Mundos Cards */
+.world-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 80px;
+    align-items: center;
+    background: var(--gray-bg);
+    padding: 40px;
+    border-radius: 40px;
+    transition: var(--transition);
+}
+
+.world-card:hover { background: #f1f5f9; }
+.world-card img { width: 100%; border-radius: 30px; }
+.world-card.reverse { direction: rtl; }
+.world-card.reverse .world-text { direction: ltr; }
+
+/* Equipo Grid */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
-    margin-top: 50px;
 }
 
-.team-card {
-    background: var(--blanco);
-    padding: 40px 20px;
-    border-radius: 25px;
+.member-card {
+    background: var(--light);
+    padding: 40px;
+    border-radius: 35px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transition: transform 0.4s ease;
+    border: 1px solid #f1f5f9;
+    transition: var(--transition);
 }
 
-.team-card:hover {
+.member-card:hover {
+    border-color: var(--primary);
     transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(38, 144, 240, 0.1);
 }
 
-.team-card img {
-    width: 130px;
-    height: 130px;
+.member-card img {
+    width: 140px; height: 140px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
-    border: 4px solid var(--azul-logo);
-}
-
-/* Galería de Misiones */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.gallery img {
-    width: 100%;
-    border-radius: 15px;
-    transition: 0.3s;
 }
 
 /* =========================================
-   5. FOOTER
+   4. RESPONSIVE Y MOBILE MENU
    ========================================= */
-footer {
-    background: #000;
-    color: #fff;
-    text-align: center;
-    padding: 60px 20px;
-}
+@media (max-width: 968px) {
+    .hamburger { display: flex; }
 
-.footer-logo span {
-    color: var(--azul-logo);
-}
-
-.socials {
-    margin-top: 20px;
-}
-
-.socials a {
-    color: var(--azul-logo);
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 0.9rem;
-}
-
-/* =========================================
-   6. RESPONSIVE (MÓVIL)
-   ========================================= */
-@media (max-width: 768px) {
-    nav {
+    .nav-links {
+        position: fixed;
+        top: 0; right: -100%;
+        width: 80%; height: 100vh;
+        background: var(--light);
         flex-direction: column;
-        padding: 15px 0;
-    }
-
-    nav ul {
-        margin-top: 15px;
-        flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
+        align-items: center;
+        transition: var(--transition);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.05);
     }
 
-    nav ul li a {
-        margin: 0 8px;
-        font-size: 0.7rem;
-    }
+    .nav-links.active { right: 0; }
 
-    .panel {
-        padding: 80px 15px;
-    }
-
-    .world-item, .world-item:nth-child(even) {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-
-    .world-item img, .world-item .text {
-        width: 100%;
-    }
-
-    .gallery {
+    .hero-grid { grid-template-columns: 1fr; text-align: center; }
+    .hero-content p { margin: 0 auto; }
+    
+    .world-card, .world-card.reverse {
         grid-template-columns: 1fr;
+        text-align: center;
     }
-
-    h1 { font-size: 2.8rem; }
-    h2 { font-size: 2rem; }
-}
-
-/* Clase para ocultar elementos antes de que GSAP los anime */
-.reveal {
-    opacity: 0;
 }

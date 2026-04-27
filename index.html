@@ -3,78 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StepL∞gic | Metaverso</title>
+    <title>StepL∞gic | Metaverso Educativo</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <nav>
-        <a href="#inicio" class="logo-container">StepL<span>∞</span>gic</a>
-        <ul>
+    <nav class="nav-glass">
+        <a href="#inicio" class="logo">StepL<span>∞</span>gic</a>
+        <ul class="nav-links">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#misiones">Misiones</a></li>
             <li><a href="#mundos">Mundos</a></li>
-            <li><a href="#indicaciones">Indicaciones</a></li>
             <li><a href="#equipo">Equipo</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
 
-    <main id="main-content">
-        <section id="inicio" class="panel section-reveal"></section>
-        <section id="misiones" class="panel section-reveal"></section>
-        <section id="mundos" class="panel section-reveal"></section>
-        <section id="indicaciones" class="panel section-reveal"></section>
-        <section id="equipo" class="panel section-reveal"></section>
-        <section id="contacto" class="panel section-reveal"></section>
-    </main>
+    <main>
+        <section id="inicio" class="hero-section">
+            <div class="container">
+                <div class="hero-content anim-up">
+                    <h1>StepL<span>∞</span>gic</h1>
+                    <p>Transformamos el aprendizaje en una aventura interactiva de Realidad Virtual. Desarrolla lógica y programación en el metaverso.</p>
+                </div>
+                <div class="hero-image anim-up">
+                    <div class="main-frame">
+                        <img src="img/inicio1.jpg" alt="Metaverso">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <footer>
-        <div class="footer-logo">© StepL<span>∞</span>gic</div>
-        <div class="socials">
-            <a href="#">Tiktok / @StepLogic_</a> | 
-            <a href="#">Instagram / @StepLogic_</a>
-        </div>
-    </footer>
+        <section id="mundos" class="mundos-section">
+            <div class="container">
+                <h2 class="anim-up">Explora los Mundos</h2>
+                
+                <div class="world-card anim-left">
+                    <img src="img/mundo1.jpg" alt="Ciudad">
+                    <div class="world-info">
+                        <h3>Ciudad Suspenso</h3>
+                        <p>Aprende lógica resolviendo misterios en un entorno urbano detallado.</p>
+                    </div>
+                </div>
+
+                <div class="world-card reverse anim-right">
+                    <img src="img/mundo2.jpg" alt="Exterior">
+                    <div class="world-info">
+                        <h3>Naturaleza Lógica</h3>
+                        <p>Desafíos de programación en entornos abiertos y dinámicos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="equipo" class="team-section">
+            <div class="container">
+                <h2 class="anim-up">Nuestro Equipo</h2>
+                <div class="team-grid">
+                    <div class="member-card anim-up">
+                        <img src="img/jaime.jpg" alt="Jaime">
+                        <h3>Jaime Cárdenas</h3>
+                        <span>Web Developer</span>
+                    </div>
+                    <div class="member-card anim-up">
+                        <img src="img/mateo.jpg" alt="Mateo">
+                        <h3>Mateo Padilla</h3>
+                        <span>Web Developer</span>
+                    </div>
+                    </div>
+            </div>
+        </section>
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
+    
     <script>
-        // Función para cargar los archivos externos dentro del scroll único
-        async function loadSections() {
-            const sections = ['inicio', 'misiones', 'mundos', 'indicaciones', 'equipo', 'contacto'];
-            for (const section of sections) {
-                const response = await fetch(`${section}.html`);
-                const text = await response.text();
-                // Extraemos solo el contenido dentro del body de cada archivo
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(text, 'text/html');
-                const content = doc.querySelector('.container') || doc.body;
-                document.getElementById(section).innerHTML = content.innerHTML;
-            }
-            initAnimations(); // Iniciar GSAP después de cargar todo
-        }
+        gsap.registerPlugin(ScrollTrigger);
 
-        function initAnimations() {
-            gsap.registerPlugin(ScrollTrigger);
-            gsap.utils.toArray('.section-reveal').forEach(section => {
-                gsap.from(section, {
-                    scrollTrigger: {
-                        trigger: section,
-                        start: "top 80%",
-                        toggleActions: "play none none reverse"
-                    },
-                    opacity: 0,
-                    y: 50,
-                    duration: 1,
-                    ease: "power2.out"
-                });
+        // Animación de subida suave
+        gsap.utils.toArray('.anim-up').forEach(el => {
+            gsap.from(el, {
+                scrollTrigger: { trigger: el, start: "top 90%" },
+                y: 60, opacity: 0, duration: 1, ease: "expo.out"
             });
-        }
+        });
 
-        window.onload = loadSections;
+        // Animación lateral
+        gsap.from('.anim-left', {
+            scrollTrigger: { trigger: '.anim-left', start: "top 80%" },
+            x: -100, opacity: 0, duration: 1.2
+        });
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Menú Hamburguesa
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        // Animación de las rayitas
+        gsap.to(".hamburger span:nth-child(1)", { rotation: navLinks.classList.contains('active') ? 45 : 0, y: navLinks.classList.contains('active') ? 9 : 0 });
+        gsap.to(".hamburger span:nth-child(2)", { opacity: navLinks.classList.contains('active') ? 0 : 1 });
+        gsap.to(".hamburger span:nth-child(3)", { rotation: navLinks.classList.contains('active') ? -45 : 0, y: navLinks.classList.contains('active') ? -9 : 0 });
+    });
+
+    // Cerrar menú al hacer click en un link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            gsap.to(".hamburger span", { rotation: 0, y: 0, opacity: 1 });
+        });
+    });
+
+    // Animaciones de Aparición (Scroll)
+    const animFadeUp = gsap.utils.toArray('section .container > *');
+    animFadeUp.forEach(el => {
+        gsap.from(el, {
+            scrollTrigger: {
+                trigger: el,
+                start: "top 90%",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power4.out"
+        });
+    });
+
+    // Efecto Parallax en imágenes de mundos
+    gsap.utils.toArray('.world-card img').forEach(img => {
+        gsap.to(img, {
+            scrollTrigger: {
+                trigger: img,
+                scrub: true
+            },
+            y: -30
+        });
+    });
+</script>
 </body>
 </html>
