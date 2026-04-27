@@ -83,13 +83,13 @@ h1, h2 {
 
 .slides {
     display: flex;
-    width: 400%;
+    width: 500%;
     height: 100%;
     animation: slideAction 15s infinite;
 }
 
 .slide {
-    width: 25%;
+    width: 20%;
     height: 100%;
 }
 
@@ -100,14 +100,17 @@ h1, h2 {
 }
 
 @keyframes slideAction {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(0); }
-    25% { transform: translateX(-25%); }
-    45% { transform: translateX(-25%); }
-    50% { transform: translateX(-50%); }
-    70% { transform: translateX(-50%); }
-    75% { transform: translateX(-75%); }
-    95% { transform: translateX(-75%); }
+    0%   { transform: translateX(0); }
+    16%  { transform: translateX(0); }
+    20%  { transform: translateX(-20%); }
+    36%  { transform: translateX(-20%); }
+    40%  { transform: translateX(-40%); }
+    56%  { transform: translateX(-40%); }
+    60%  { transform: translateX(-60%); }
+    76%  { transform: translateX(-60%); }
+    80%  { transform: translateX(-80%); }
+    96%  { transform: translateX(-80%); }
+    100% { transform: translateX(0); }
 }
 
 /* MUNDOS (ACORDEÓN) */
@@ -134,7 +137,9 @@ summary {
 
 .world-content img {
     width: 300px;
+    max-width: 100%;
     border-radius: 8px;
+    flex-shrink: 0;
 }
 
 /* EQUIPO */
@@ -177,4 +182,65 @@ footer .footer-logo {
     color: #2690F0;
     text-decoration: none;
     margin: 0 10px;
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE — MÓVIL (max 768px)
+══════════════════════════════════════ */
+@media (max-width: 768px) {
+
+    body {
+        padding-top: 60px;
+    }
+
+    /* NAV: logo más pequeño, links en fila compacta */
+    nav {
+        padding: 10px 15px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .logo-container {
+        font-size: 1.3rem;
+    }
+
+    .logo-container span {
+        font-size: 1.6rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    nav ul li a {
+        margin-left: 8px;
+        font-size: 0.75rem;
+    }
+
+    /* CARRUSEL: altura adaptable en móvil */
+    .slider-container {
+        height: 220px;
+    }
+
+    /* MUNDOS: imagen debajo del texto */
+    .world-content {
+        flex-direction: column;
+    }
+
+    .world-content img {
+        width: 100%;
+    }
+
+    /* CONTACTO: imágenes apiladas */
+    .contact-imgs img {
+        width: 100%;
+        min-width: unset;
+    }
+
+    /* MISIONES: 1 columna en pantallas pequeñas */
+    #misiones .container > div[style*="grid"] {
+        grid-template-columns: 1fr !important;
+    }
 }

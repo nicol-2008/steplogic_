@@ -38,19 +38,23 @@
             padding-top: 100px;
         }
 
-        /* ── CARRUSEL INDICACIONES (reutiliza .slides-ind) ── */
+        /* ── CARRUSEL INDICACIONES (4 slides → saltos de 25%) ── */
         .slides-ind {
+            width: 400%;
             animation: slideAction4 16s infinite;
+        }
+        .slides-ind .slide {
+            width: 25%;
         }
         @keyframes slideAction4 {
             0%   { transform: translateX(0); }
-            22%  { transform: translateX(0); }
-            27%  { transform: translateX(-25%); }
-            47%  { transform: translateX(-25%); }
-            52%  { transform: translateX(-50%); }
-            72%  { transform: translateX(-50%); }
-            77%  { transform: translateX(-75%); }
-            97%  { transform: translateX(-75%); }
+            20%  { transform: translateX(0); }
+            25%  { transform: translateX(-25%); }
+            45%  { transform: translateX(-25%); }
+            50%  { transform: translateX(-50%); }
+            70%  { transform: translateX(-50%); }
+            75%  { transform: translateX(-75%); }
+            95%  { transform: translateX(-75%); }
             100% { transform: translateX(0); }
         }
 
@@ -227,7 +231,7 @@
                 <div class="team-card">
                     <img src="IMG/jaime.jpg" alt="Jaime Cárdenas">
                     <h3>Jaime Cárdenas</h3>
-                    <p>Estudiante de Informática.<br>Mención Aplicaciones Web. 3E2.</p>
+                    <p>Estudiante de Informática.<br>Mención Desarrollo Mobil. 3E2.</p>
                 </div>
                 <div class="team-card">
                     <img src="IMG/mateo.jpg" alt="Mateo Padilla">
