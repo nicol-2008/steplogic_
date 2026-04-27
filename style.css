@@ -1,6 +1,14 @@
 /* =========================================
-   1. CONFIGURACIÓN GENERAL Y VARIABLES
+   1. VARIABLES Y CONFIGURACIÓN BASE
    ========================================= */
+:root {
+    --azul-logo: #2690F0;      /* Celeste StepLogic */
+    --azul-oscuro: #001f3f;    /* Azul profesional */
+    --negro: #000000;
+    --blanco: #ffffff;
+    --gris-fondo: #f4faff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,23 +16,15 @@
     font-family: 'Helvetica', Arial, sans-serif;
 }
 
-:root {
-    --azul-logo: #2690F0;      /* Celeste StepLogic */
-    --azul-oscuro: #001f3f;    /* Azul para títulos */
-    --negro: #000000;
-    --blanco: #ffffff;
-    --gris-claro: #f4faff;
-}
-
 body {
     background-color: var(--blanco);
     color: var(--negro);
     line-height: 1.6;
-    padding-top: 80px; /* Evita que el contenido quede bajo el menú fijo */
+    padding-top: 80px; /* Espacio para el menú fijo */
 }
 
 /* =========================================
-   2. NAVEGACIÓN (BARRA SUPERIOR)
+   2. NAVEGACIÓN PROFESIONAL
    ========================================= */
 nav {
     background: var(--negro);
@@ -48,7 +48,7 @@ nav {
 }
 
 .logo-container span {
-    color: var(--azul-logo); /* Infinito en celeste */
+    color: var(--azul-logo);
     font-size: 2.2rem;
     margin: 0 2px;
 }
@@ -73,7 +73,7 @@ nav ul li a:hover {
 }
 
 /* =========================================
-   3. ESTRUCTURA Y TEXTOS
+   3. CONTENEDORES Y TEXTOS
    ========================================= */
 .container {
     max-width: 1100px;
@@ -87,17 +87,15 @@ h1, h2 {
     text-align: center;
 }
 
-h2 { font-size: 2.2rem; }
-
-.section-intro {
+.hero-text, .section-intro {
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto 40px auto;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
     font-size: 1.1rem;
 }
 
 /* =========================================
-   4. CARRUSEL / SLIDER (ANIMADO)
+   4. CARRUSEL ANIMADO (INICIO E INDICACIONES)
    ========================================= */
 .slider-container {
     width: 100%;
@@ -110,7 +108,7 @@ h2 { font-size: 2.2rem; }
 
 .slides {
     display: flex;
-    width: 400%; /* Para 4 imágenes */
+    width: 400%;
     height: 100%;
     animation: slideAction 16s infinite;
 }
@@ -135,30 +133,29 @@ h2 { font-size: 2.2rem; }
     70% { transform: translateX(-50%); }
     75% { transform: translateX(-75%); }
     95% { transform: translateX(-75%); }
-    100% { transform: translateX(0); }
 }
 
 /* =========================================
-   5. MUNDOS (ACORDEÓN)
+   5. MUNDOS (ACORDEÓN DESPLEGABLE)
    ========================================= */
 .world-box {
     margin-bottom: 15px;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
 }
 
 summary {
     padding: 20px;
-    background: var(--gris-claro);
+    background: var(--gris-fondo);
     cursor: pointer;
     font-weight: bold;
     color: var(--azul-oscuro);
-    list-style: none;
+    outline: none;
 }
 
 .world-content {
-    padding: 20px;
+    padding: 25px;
     display: flex;
     gap: 30px;
     align-items: center;
@@ -166,60 +163,39 @@ summary {
 }
 
 .world-content img {
-    width: 350px;
+    width: 400px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* =========================================
-   6. EQUIPO (TARJETAS)
+   6. EQUIPO Y GALERÍAS
    ========================================= */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
 }
 
 .team-card {
     text-align: center;
-    padding: 30px 20px;
-    background: var(--gris-claro);
+    padding: 30px;
+    background: var(--gris-fondo);
     border-bottom: 5px solid var(--azul-logo);
-    border-radius: 10px;
-    transition: 0.3s;
+    border-radius: 15px;
 }
 
-.team-card:hover { transform: translateY(-5px); }
-
 .team-card img {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
-    border: 4px solid var(--blanco);
-}
-
-.team-card h3 { color: var(--azul-oscuro); margin-bottom: 10px; }
-
-/* =========================================
-   7. CONTACTO
-   ========================================= */
-.contact-images {
-    display: flex;
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.contact-images img {
-    width: 50%;
-    border-radius: 15px;
-    border: 1px solid #eee;
+    border: 5px solid var(--blanco);
 }
 
 /* =========================================
-   8. FOOTER ÚNICO
+   7. FOOTER ÚNICO
    ========================================= */
 footer {
     background: var(--negro);
@@ -232,27 +208,26 @@ footer {
 footer .footer-logo {
     font-size: 1.6rem;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 footer .footer-logo span { color: var(--azul-logo); }
 
-.social-links { margin-top: 15px; }
-
 .social-links a {
     color: var(--azul-logo);
     text-decoration: none;
-    margin: 0 12px;
-    font-size: 1rem;
+    margin: 0 15px;
 }
 
 /* =========================================
-   9. RESPONSIVE (MÓVILES)
+   8. MEDIA QUERIES (ADAPTACIÓN A TELÉFONOS)
    ========================================= */
 @media (max-width: 768px) {
+    body { padding-top: 130px; } /* Más espacio por el menú colapsado */
+
     nav {
         flex-direction: column;
-        padding: 15px 10px;
+        padding: 15px 5px;
     }
 
     nav ul {
@@ -261,21 +236,47 @@ footer .footer-logo span { color: var(--azul-logo); }
         justify-content: center;
     }
 
-    nav ul li { margin: 5px 8px; }
+    nav ul li a {
+        margin: 5px;
+        font-size: 0.75rem;
+    }
 
-    .slider-container { height: 280px; }
+    /* Ajuste INICIO */
+    h1 { font-size: 1.8rem; }
+    .hero-text, .section-intro {
+        font-size: 0.95rem;
+        padding: 0 10px;
+        text-align: left; /* Mejor lectura en pantallas pequeñas */
+    }
 
+    .slider-container {
+        height: 250px;
+    }
+
+    /* Ajuste MUNDOS */
     .world-content {
-        flex-direction: column;
+        flex-direction: column !important; /* Fuerza imagen debajo del texto */
         text-align: center;
     }
 
-    .world-content img { width: 100%; }
+    .world-content img {
+        width: 100% !important;
+        margin-top: 15px;
+    }
 
-    .contact-images { flex-direction: column; }
-    
-    .contact-images img { width: 100%; }
+    /* Ajuste EQUIPO */
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
 
-    h1 { font-size: 1.8rem; }
-    h2 { font-size: 1.6rem; }
+    /* Ajuste CONTACTO */
+    .contact-flex, .contact-images {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .contact-images img {
+        width: 100% !important;
+        margin-top: 10px;
+    }
 }
