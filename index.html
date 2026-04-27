@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>StepL∞gic | Metaverse Research</title>
+    <title>StepL∞gic | Metaverse Experience</title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css">
@@ -21,7 +21,6 @@
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#misiones">Misiones</a></li>
                 <li><a href="#mundos">Mundos</a></li>
-                <li><a href="#indicaciones">Indicaciones</a></li>
                 <li><a href="#equipo">Equipo</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
@@ -30,121 +29,115 @@
 
     <section id="inicio" class="section hero">
         <div class="container">
-            <div class="hero-text anim">
-                <h1>StepL<span>∞</span>gic</h1>
-                <p>Experiencia inmersiva en realidad virtual para el aprendizaje de programación. Resuelve acertijos y domina el metaverso.</p>
-            </div>
+            <h1>StepL<span>∞</span>gic</h1>
+            <p class="hero-desc">Metaverso en Realidad Virtual para dominar la programación.</p>
             
-            <div class="swiper mySwiper anim">
+            <div class="swiper mainSwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"><img src="IMG/inicio2.jpg"></div>
                     <div class="swiper-slide"><img src="IMG/inicio1.jpg"></div>
                     <div class="swiper-slide"><img src="IMG/inicio4.jpg"></div>
-                    <div class="swiper-slide"><img src="IMG/inicio5.jpg"></div>
-                    <div class="swiper-slide"><img src="IMG/inicio6.jpg"></div>
                 </div>
                 <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
             </div>
         </div>
     </section>
 
     <section id="misiones" class="section bg-black">
         <div class="container">
-            <h2 class="anim">Misiones de Investigación</h2>
-            <div class="misiones-grid">
-                <div class="m-card anim"><img src="IMG/mision1.jpg"></div>
-                <div class="m-card anim"><img src="IMG/mision2.jpg"></div>
-                <div class="m-card anim"><img src="IMG/mision3.jpg"></div>
-                <div class="m-card anim"><img src="IMG/mision4.jpg"></div>
-                <div class="m-card anim"><img src="IMG/mision5.jpg"></div>
-                <div class="m-card anim"><img src="IMG/mision6.jpg"></div>
-                <div class="m-card anim"><img src="IMG/mision7.jpg"></div>
-                <div class="m-card anim"><img src="IMG/mision8.PNG"></div>
+            <h2>Misiones de Investigación</h2>
+            <div class="swiper misionesSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><div class="m-card"><img src="IMG/mision1.jpg"></div></div>
+                    <div class="swiper-slide"><div class="m-card"><img src="IMG/mision2.jpg"></div></div>
+                    <div class="swiper-slide"><div class="m-card"><img src="IMG/mision3.jpg"></div></div>
+                    <div class="swiper-slide"><div class="m-card"><img src="IMG/mision4.jpg"></div></div>
+                    <div class="swiper-slide"><div class="m-card"><img src="IMG/mision5.jpg"></div></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
     </section>
 
     <section id="mundos" class="section">
         <div class="container">
-            <h2 class="anim">Explora los Mundos</h2>
-            <div class="world-row anim">
-                <div class="w-info">
-                    <h3>Mundo 1: La Ciudad</h3>
-                    <p>Misterio y suspenso en un entorno urbano detallado.</p>
+            <div class="world-flex">
+                <div class="w-card">
+                    <img src="img/mundo1.jpg">
+                    <h3>Mundo 1: Ciudad</h3>
                 </div>
-                <div class="w-img"><img src="img/mundo1.jpg"></div>
-            </div>
-            <div class="world-row reverse anim">
-                <div class="w-info">
+                <div class="w-card">
+                    <img src="img/mundo2.jpg">
                     <h3>Mundo 2: Exterior</h3>
-                    <p>Exploración libre para desafíos lógicos complejos.</p>
                 </div>
-                <div class="w-img"><img src="img/mundo2.jpg"></div>
             </div>
         </div>
     </section>
 
-    <section id="indicaciones" class="section bg-gray">
+    <section id="equipo" class="section bg-gray">
         <div class="container">
-            <h2 class="anim">Indicaciones VR</h2>
-            <div class="swiper mySwiper anim">
+            <h2>Nuestro Equipo</h2>
+            <div class="swiper equipoSwiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="IMG/requisito1.PNG"></div>
-                    <div class="swiper-slide"><img src="IMG/requisito2.PNG"></div>
-                    <div class="swiper-slide"><img src="IMG/requisito3.PNG"></div>
-                    <div class="swiper-slide"><img src="IMG/requisito4.PNG"></div>
+                    <div class="swiper-slide">
+                        <div class="t-card"><img src="IMG/jaime.jpg"><h4>Jaime Cárdenas</h4></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="t-card"><img src="IMG/mateo.jpg"><h4>Mateo Padilla</h4></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="t-card"><img src="IMG/nicol.jpg"><h4>Nicole Pesántez</h4></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="t-card"><img src="IMG/villa.jpg"><h4>Adrián Villareal</h4></div>
+                    </div>
                 </div>
-                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
 
-    <section id="equipo" class="section">
+    <section id="contacto" class="section bg-black">
         <div class="container">
-            <h2 class="anim">Nuestro Equipo</h2>
-            <div class="team-grid">
-                <div class="t-card anim"><img src="IMG/jaime.jpg"><h4>Jaime Cárdenas</h4></div>
-                <div class="t-card anim"><img src="IMG/mateo.jpg"><h4>Mateo Padilla</h4></div>
-                <div class="t-card anim"><img src="IMG/nicol.jpg"><h4>Nicole Pesántez</h4></div>
-                <div class="t-card anim"><img src="IMG/villa.jpg"><h4>Adrián Villareal</h4></div>
+            <div class="contact-grid">
+                <div class="c-info">
+                    <h2>Contáctanos</h2>
+                    <p>📞 0981168969</p>
+                    <p>En StepLogic creamos experiencias únicas.</p>
+                </div>
+                <div class="c-pics">
+                    <img src="IMG/ig.jpg">
+                    <img src="IMG/juego.jpg">
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>© StepL<span>∞</span>gic | @StepLogic_</p>
-    </footer>
+    <footer><p>© StepL<span>∞</span>gic</p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
     <script>
-        // Inicializar Carrusel (Deslizable)
-        const swiper = new Swiper(".mySwiper", {
-            loop: true,
-            pagination: { el: ".swiper-pagination", clickable: true },
+        // Configuración de Carruseles
+        new Swiper(".mainSwiper", { loop: true, pagination: { el: ".swiper-pagination" } });
+
+        new Swiper(".misionesSwiper", {
+            slidesPerView: 1, spaceBetween: 20,
             navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+            breakpoints: { 768: { slidesPerView: 3 } } // En PC muestra 3
+        });
+
+        new Swiper(".equipoSwiper", {
+            slidesPerView: 1.2, spaceBetween: 20,
+            breakpoints: { 768: { slidesPerView: 4 } } // En PC muestra 4
         });
 
         // Menú Móvil
         const btn = document.getElementById('menu-btn');
-        const list = document.getElementById('nav-list');
+        const nav = document.getElementById('nav-list');
         btn.onclick = () => {
-            list.classList.toggle('show');
+            nav.classList.toggle('active');
             btn.classList.toggle('open');
         }
-
-        // Animaciones Scroll
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.utils.toArray('.anim').forEach(el => {
-            gsap.from(el, {
-                scrollTrigger: el,
-                y: 40, opacity: 0, duration: 1, ease: "power2.out"
-            });
-        });
     </script>
 </body>
 </html>
