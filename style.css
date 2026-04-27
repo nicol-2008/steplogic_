@@ -1,4 +1,6 @@
-/* PALETA DE COLORES: Celeste (#2690F0), Azul (#001f3f), Blanco y Negro */
+/* =========================================
+   1. CONFIGURACIÓN GENERAL Y VARIABLES
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -6,15 +8,26 @@
     font-family: 'Helvetica', Arial, sans-serif;
 }
 
-body {
-    background-color: #ffffff;
-    color: #000000;
-    padding-top: 80px;
+:root {
+    --azul-logo: #2690F0;      /* Celeste StepLogic */
+    --azul-oscuro: #001f3f;    /* Azul para títulos */
+    --negro: #000000;
+    --blanco: #ffffff;
+    --gris-claro: #f4faff;
 }
 
-/* NAVBAR PROFESIONAL */
+body {
+    background-color: var(--blanco);
+    color: var(--negro);
+    line-height: 1.6;
+    padding-top: 80px; /* Evita que el contenido quede bajo el menú fijo */
+}
+
+/* =========================================
+   2. NAVEGACIÓN (BARRA SUPERIOR)
+   ========================================= */
 nav {
-    background: #000000;
+    background: var(--negro);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,7 +39,7 @@ nav {
 }
 
 .logo-container {
-    color: #ffffff;
+    color: var(--blanco);
     font-size: 1.8rem;
     font-weight: bold;
     text-decoration: none;
@@ -35,7 +48,7 @@ nav {
 }
 
 .logo-container span {
-    color: #2690F0; /* Celeste del infinito */
+    color: var(--azul-logo); /* Infinito en celeste */
     font-size: 2.2rem;
     margin: 0 2px;
 }
@@ -46,32 +59,46 @@ nav ul {
 }
 
 nav ul li a {
-    color: #ffffff;
+    color: var(--blanco);
     text-decoration: none;
     margin-left: 20px;
     font-size: 0.9rem;
     text-transform: uppercase;
+    font-weight: 600;
     transition: 0.3s;
 }
 
 nav ul li a:hover {
-    color: #2690F0;
+    color: var(--azul-logo);
 }
 
-/* CONTENEDOR PRINCIPAL */
+/* =========================================
+   3. ESTRUCTURA Y TEXTOS
+   ========================================= */
 .container {
     max-width: 1100px;
     margin: 40px auto;
-    padding: 20px;
+    padding: 0 20px;
 }
 
 h1, h2 {
-    color: #001f3f;
-    margin-bottom: 20px;
+    color: var(--azul-oscuro);
+    margin-bottom: 25px;
     text-align: center;
 }
 
-/* CARRUSEL DE IMÁGENES (SLIDER) */
+h2 { font-size: 2.2rem; }
+
+.section-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   4. CARRUSEL / SLIDER (ANIMADO)
+   ========================================= */
 .slider-container {
     width: 100%;
     overflow: hidden;
@@ -83,9 +110,9 @@ h1, h2 {
 
 .slides {
     display: flex;
-    width: 400%;
+    width: 400%; /* Para 4 imágenes */
     height: 100%;
-    animation: slideAction 15s infinite;
+    animation: slideAction 16s infinite;
 }
 
 .slide {
@@ -108,73 +135,147 @@ h1, h2 {
     70% { transform: translateX(-50%); }
     75% { transform: translateX(-75%); }
     95% { transform: translateX(-75%); }
+    100% { transform: translateX(0); }
 }
 
-/* MUNDOS (ACORDEÓN) */
+/* =========================================
+   5. MUNDOS (ACORDEÓN)
+   ========================================= */
 .world-box {
     margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
+    overflow: hidden;
 }
 
 summary {
-    padding: 15px;
-    background: #f4faff;
+    padding: 20px;
+    background: var(--gris-claro);
     cursor: pointer;
     font-weight: bold;
-    color: #001f3f;
+    color: var(--azul-oscuro);
+    list-style: none;
 }
 
 .world-content {
     padding: 20px;
     display: flex;
-    gap: 20px;
+    gap: 30px;
     align-items: center;
+    background: var(--blanco);
 }
 
 .world-content img {
-    width: 300px;
-    border-radius: 8px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* EQUIPO */
+/* =========================================
+   6. EQUIPO (TARJETAS)
+   ========================================= */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
 }
 
 .team-card {
     text-align: center;
-    border-bottom: 4px solid #2690F0;
-    padding: 20px;
-    background: #f9f9f9;
+    padding: 30px 20px;
+    background: var(--gris-claro);
+    border-bottom: 5px solid var(--azul-logo);
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
+.team-card:hover { transform: translateY(-5px); }
+
 .team-card img {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
+    border: 4px solid var(--blanco);
 }
 
-/* FOOTER ÚNICO */
+.team-card h3 { color: var(--azul-oscuro); margin-bottom: 10px; }
+
+/* =========================================
+   7. CONTACTO
+   ========================================= */
+.contact-images {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.contact-images img {
+    width: 50%;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+
+/* =========================================
+   8. FOOTER ÚNICO
+   ========================================= */
 footer {
-    background: #000000;
-    color: #ffffff;
+    background: var(--negro);
+    color: var(--blanco);
     text-align: center;
-    padding: 40px 20px;
+    padding: 50px 20px;
     margin-top: 60px;
 }
 
 footer .footer-logo {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
+footer .footer-logo span { color: var(--azul-logo); }
+
+.social-links { margin-top: 15px; }
+
 .social-links a {
-    color: #2690F0;
+    color: var(--azul-logo);
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 12px;
+    font-size: 1rem;
+}
+
+/* =========================================
+   9. RESPONSIVE (MÓVILES)
+   ========================================= */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 15px 10px;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li { margin: 5px 8px; }
+
+    .slider-container { height: 280px; }
+
+    .world-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .world-content img { width: 100%; }
+
+    .contact-images { flex-direction: column; }
+    
+    .contact-images img { width: 100%; }
+
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.6rem; }
 }
