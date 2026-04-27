@@ -3,150 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StepL∞gic | Metaverso Educativo</title>
+    <title>StepL∞gic | Metaverse Experience</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="nav-glass">
-        <a href="#inicio" class="logo">StepL<span>∞</span>gic</a>
-        <ul class="nav-links">
+        <a href="#inicio" class="logo-container">StepL<span>∞</span>gic</a>
+        <button class="hamburger" id="menu-toggle">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="nav-menu">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#misiones">Misiones</a></li>
             <li><a href="#mundos">Mundos</a></li>
+            <li><a href="#indicaciones">Indicaciones</a></li>
             <li><a href="#equipo">Equipo</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#contacto">Contáctanos</a></li>
         </ul>
     </nav>
 
     <main>
-        <section id="inicio" class="hero-section">
+        <section id="inicio" class="panel hero">
             <div class="container">
-                <div class="hero-content anim-up">
-                    <h1>StepL<span>∞</span>gic</h1>
-                    <p>Transformamos el aprendizaje en una aventura interactiva de Realidad Virtual. Desarrolla lógica y programación en el metaverso.</p>
-                </div>
-                <div class="hero-image anim-up">
-                    <div class="main-frame">
-                        <img src="img/inicio1.jpg" alt="Metaverso">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="mundos" class="mundos-section">
-            <div class="container">
-                <h2 class="anim-up">Explora los Mundos</h2>
+                <h1 class="reveal">Stepl<span>∞</span>gic</h1>
+                <p class="hero-subtitle reveal">Es una experiencia inmersiva en realidad virtual que transforma el aprendizaje en una aventura interactiva. A través de acertijos, misiones y desafíos, los usuarios desarrollan habilidades en programación y bases de datos.</p>
                 
-                <div class="world-card anim-left">
-                    <img src="img/mundo1.jpg" alt="Ciudad">
-                    <div class="world-info">
-                        <h3>Ciudad Suspenso</h3>
-                        <p>Aprende lógica resolviendo misterios en un entorno urbano detallado.</p>
+                <div class="slider-container reveal">
+                    <div class="slides">
+                        <div class="slide"><img src="IMG/inicio2.jpg"></div>
+                        <div class="slide"><img src="IMG/inicio1.jpg"></div>
+                        <div class="slide"><img src="IMG/inicio4.jpg"></div>
+                        <div class="slide"><img src="IMG/inicio5.jpg"></div>
+                        <div class="slide"><img src="IMG/inicio6.jpg"></div>
                     </div>
                 </div>
 
-                <div class="world-card reverse anim-right">
+                <div class="info-box reveal">
+                    <p>Además, en Stepl<span>∞</span>gic también creamos experiencias personalizadas para empresas, emprendimientos y espacios educativos que buscan innovar en la forma de enseñar.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="misiones" class="panel bg-dark">
+            <div class="container">
+                <h2 class="reveal">Misiones de Investigación</h2>
+                <p class="section-desc reveal">Aquí tienes algunas misiones del primer mundo donde tendrás que resolver un asesinato y un robo, encontrar a cinco sospechosos y bloquear los cajeros de ATMS, ¡buena suerte detective!</p>
+                
+                <div class="misiones-grid reveal">
+                    <img src="IMG/mision1.jpg" alt="Misión 1">
+                    <img src="IMG/mision2.jpg" alt="Misión 2">
+                    <img src="IMG/mision3.jpg" alt="Misión 3">
+                    <img src="IMG/mision4.jpg" alt="Misión 4">
+                    <img src="IMG/mision5.jpg" alt="Misión 5">
+                    <img src="IMG/mision6.jpg" alt="Misión 6">
+                    <img src="IMG/mision7.jpg" alt="Misión 7">
+                    <img src="IMG/mision8.PNG" alt="Misión 8">
+                </div>
+            </div>
+        </section>
+
+        <section id="mundos" class="panel">
+            <div class="container">
+                <h2 class="reveal">Explora los Mundos</h2>
+                
+                <div class="world-item reveal">
+                    <div class="world-text">
+                        <h3>Mundo 1: La Ciudad</h3>
+                        <p>Diseñado dentro de una ciudad llena de suspenso y ansias por descubrir lo que el detective te pide.</p>
+                    </div>
+                    <img src="img/mundo1.jpg" alt="Ciudad">
+                </div>
+
+                <div class="world-item reveal reverse">
+                    <div class="world-text">
+                        <h3>Mundo 2: Exterior</h3>
+                        <p>Diseñado en un entorno exterior para aumentar la trama del juego.</p>
+                    </div>
                     <img src="img/mundo2.jpg" alt="Exterior">
-                    <div class="world-info">
-                        <h3>Naturaleza Lógica</h3>
-                        <p>Desafíos de programación en entornos abiertos y dinámicos.</p>
+                </div>
+
+                <div class="world-item reveal">
+                    <div class="world-text">
+                        <h3>Mundo 3: En Desarrollo</h3>
+                        <p>Estamos trabajando en ello para darte la mejor experiencia.</p>
+                    </div>
+                    <img src="img/mundo3.jpg" alt="Desarrollo">
+                </div>
+            </div>
+        </section>
+
+        <section id="indicaciones" class="panel bg-light">
+            <div class="container">
+                <h2 class="reveal">Indicaciones para el Detective</h2>
+                <p class="section-desc reveal" style="color: #001f3f; font-weight: bold;">Aquí tienes algunos requisitos que se te pedirán e indicarán antes de iniciar el juego.</p>
+                
+                <div class="slider-container reveal">
+                    <div class="slides">
+                        <div class="slide"><img src="IMG/requisito1.PNG"></div>
+                        <div class="slide"><img src="IMG/requisito2.PNG"></div>
+                        <div class="slide"><img src="IMG/requisito3.PNG"></div>
+                        <div class="slide"><img src="IMG/requisito4.PNG"></div>
+                    </div>
+                </div>
+
+                <div class="alert-box reveal">
+                    <p><strong>Nota importante:</strong> Asegúrate de configurar correctamente tus gafas de Realidad Virtual y contar con un espacio despejado para moverte con seguridad.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="equipo" class="panel">
+            <div class="container">
+                <h2 class="reveal">Nuestro Equipo</h2>
+                <div class="team-grid">
+                    <div class="team-card reveal">
+                        <img src="IMG/jaime.jpg" alt="Jaime">
+                        <h3>Jaime Cárdenas</h3>
+                        <p>Estudiante de Informática. Mención Aplicaciones Web. 3E2.</p>
+                    </div>
+                    <div class="team-card reveal">
+                        <img src="IMG/mateo.jpg" alt="Mateo">
+                        <h3>Mateo Padilla</h3>
+                        <p>Estudiante de Informática. Mención Desarrollo WEB. 3E2.</p>
+                    </div>
+                    <div class="team-card reveal">
+                        <img src="IMG/nicol.jpg" alt="Nicole">
+                        <h3>Nicole Pesántez</h3>
+                        <p>Estudiante de Informática. Mención Desarrollo WEB. 3E2.</p>
+                    </div>
+                    <div class="team-card reveal">
+                        <img src="IMG/villa.jpg" alt="Adrián">
+                        <h3>Adrián Villareal</h3>
+                        <p>Estudiante de Informática. Mención Desarrollo WEB. 3E2.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="equipo" class="team-section">
+        <section id="contacto" class="panel bg-dark">
             <div class="container">
-                <h2 class="anim-up">Nuestro Equipo</h2>
-                <div class="team-grid">
-                    <div class="member-card anim-up">
-                        <img src="img/jaime.jpg" alt="Jaime">
-                        <h3>Jaime Cárdenas</h3>
-                        <span>Web Developer</span>
+                <h2 class="reveal">Contáctanos</h2>
+                <div class="contact-flex reveal">
+                    <div class="contact-info">
+                        <p><strong>En StepLogic no solo resolvemos casos, creamos nuevas experiencias.</strong></p>
+                        <p>Estamos diseñando mundos interactivos que desafían los límites del aprendizaje. Si tienes una idea innovadora, ¡escríbenos!</p>
+                        <div class="contact-tag">
+                            <p>📞 0981168969</p>
+                            <p>🚀 Innovación constante</p>
+                        </div>
                     </div>
-                    <div class="member-card anim-up">
-                        <img src="img/mateo.jpg" alt="Mateo">
-                        <h3>Mateo Padilla</h3>
-                        <span>Web Developer</span>
+                    <div class="contact-images">
+                        <img src="IMG/ig.jpg" alt="IG">
+                        <img src="IMG/juego.jpg" alt="Juego">
                     </div>
-                    </div>
+                </div>
             </div>
         </section>
     </main>
 
+    <footer>
+        <div class="footer-logo">© StepL<span>∞</span>gic</div>
+        <div class="social-links">
+            <a href="https://tiktok.com/@StepLogic_" target="_blank">Tiktok</a> | 
+            <a href="https://instagram.com/StepLogic_" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
-        // Animación de subida suave
-        gsap.utils.toArray('.anim-up').forEach(el => {
-            gsap.from(el, {
-                scrollTrigger: { trigger: el, start: "top 90%" },
-                y: 60, opacity: 0, duration: 1, ease: "expo.out"
+        // Menú Hamburguesa
+        const menuBtn = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuBtn.classList.toggle('open');
+        });
+
+        // Cerrar menú al clickear link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuBtn.classList.remove('open');
             });
         });
 
-        // Animación lateral
-        gsap.from('.anim-left', {
-            scrollTrigger: { trigger: '.anim-left', start: "top 80%" },
-            x: -100, opacity: 0, duration: 1.2
+        // Animaciones de Aparición (Revelar al hacer scroll)
+        gsap.utils.toArray('.reveal').forEach(el => {
+            gsap.from(el, {
+                scrollTrigger: { trigger: el, start: "top 85%" },
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out"
+            });
         });
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-<script>
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Menú Hamburguesa
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        // Animación de las rayitas
-        gsap.to(".hamburger span:nth-child(1)", { rotation: navLinks.classList.contains('active') ? 45 : 0, y: navLinks.classList.contains('active') ? 9 : 0 });
-        gsap.to(".hamburger span:nth-child(2)", { opacity: navLinks.classList.contains('active') ? 0 : 1 });
-        gsap.to(".hamburger span:nth-child(3)", { rotation: navLinks.classList.contains('active') ? -45 : 0, y: navLinks.classList.contains('active') ? -9 : 0 });
-    });
-
-    // Cerrar menú al hacer click en un link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            gsap.to(".hamburger span", { rotation: 0, y: 0, opacity: 1 });
-        });
-    });
-
-    // Animaciones de Aparición (Scroll)
-    const animFadeUp = gsap.utils.toArray('section .container > *');
-    animFadeUp.forEach(el => {
-        gsap.from(el, {
-            scrollTrigger: {
-                trigger: el,
-                start: "top 90%",
-            },
-            y: 50,
-            opacity: 0,
-            duration: 1,
-            ease: "power4.out"
-        });
-    });
-
-    // Efecto Parallax en imágenes de mundos
-    gsap.utils.toArray('.world-card img').forEach(img => {
-        gsap.to(img, {
-            scrollTrigger: {
-                trigger: img,
-                scrub: true
-            },
-            y: -30
-        });
-    });
-</script>
 </body>
 </html>
