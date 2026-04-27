@@ -2,127 +2,314 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>StepL∞gic | Metaverse</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StepL∞gic</title>
+    <meta name="description" content="StepLogic: una experiencia inmersiva en realidad virtual que transforma el aprendizaje en una aventura interactiva con misiones, mundos y desafíos.">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* ── SMOOTH SCROLL ── */
+        html { scroll-behavior: smooth; }
+
+        /* ── SECCIONES ── */
+        section {
+            padding: 80px 0 60px;
+        }
+        section:nth-child(even) {
+            background: #f4faff;
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 4px;
+            background: #2690F0;
+            margin: 0 auto 30px auto;
+            border-radius: 2px;
+        }
+
+        /* ── NAV ACTIVO ── */
+        nav ul li a.active {
+            color: #2690F0;
+            border-bottom: 2px solid #2690F0;
+            padding-bottom: 2px;
+        }
+
+        /* ── HERO ── */
+        #inicio {
+            padding-top: 100px;
+        }
+
+        /* ── CARRUSEL INDICACIONES (reutiliza .slides-ind) ── */
+        .slides-ind {
+            animation: slideAction4 16s infinite;
+        }
+        @keyframes slideAction4 {
+            0%   { transform: translateX(0); }
+            22%  { transform: translateX(0); }
+            27%  { transform: translateX(-25%); }
+            47%  { transform: translateX(-25%); }
+            52%  { transform: translateX(-50%); }
+            72%  { transform: translateX(-50%); }
+            77%  { transform: translateX(-75%); }
+            97%  { transform: translateX(-75%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* ── NOTA INDICACIONES ── */
+        .nota-box {
+            margin-top: 40px;
+            padding: 25px;
+            border-left: 5px solid #2690F0;
+            background: #f4faff;
+            border-radius: 0 15px 15px 0;
+        }
+
+        /* ── CONTACTO FOTOS ── */
+        .contact-imgs {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .contact-imgs img {
+            width: 45%;
+            min-width: 240px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* ── CAJA CONTACTO ── */
+        .contact-info-box {
+            background: #f4faff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border: 1px dashed #2690F0;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#inicio" class="logo">StepL<span>∞</span>gic</a>
-            <div class="menu-icon" id="menu-btn">
-                <span></span><span></span><span></span>
-            </div>
-            <ul class="nav-menu" id="nav-list">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#misiones">Misiones</a></li>
-                <li><a href="#mundos">Mundos</a></li>
-                <li><a href="#equipo">Equipo</a></li>
-                <li><a href="#contacto">Contáctanos</a></li>
-            </ul>
-        </div>
+    <!-- ══════════ NAVBAR ══════════ -->
+    <nav>
+        <a href="#inicio" class="logo-container">StepL<span>∞</span>gic</a>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#misiones">Misiones</a></li>
+            <li><a href="#mundos">Mundos</a></li>
+            <li><a href="#indicaciones">Indicaciones</a></li>
+            <li><a href="#equipo">Equipo</a></li>
+            <li><a href="#contacto">Contáctanos</a></li>
+        </ul>
     </nav>
 
-    <main>
-        <section id="inicio" class="section hero">
-            <div class="container">
-                <h1>StepL<span>∞</span>gic</h1>
-                <p class="subtitle">Aprendizaje inmersivo en Realidad Virtual.</p>
-                <div class="swiper mainSwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="IMG/inicio2.jpg"></div>
-                        <div class="swiper-slide"><img src="IMG/inicio1.jpg"></div>
-                        <div class="swiper-slide"><img src="IMG/inicio4.jpg"></div>
-                        <div class="swiper-slide"><img src="IMG/inicio5.jpg"></div>
-                        <div class="swiper-slide"><img src="IMG/inicio6.jpg"></div>
-                    </div>
-                    <div class="swiper-pagination"></div>
+    <!-- ══════════ SECCIÓN: INICIO ══════════ -->
+    <section id="inicio">
+        <div class="container">
+            <h1>Stepl<span>∞</span>gic</h1>
+            <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: auto;">
+                Es una experiencia inmersiva en realidad virtual que transforma el aprendizaje en una aventura interactiva.
+                A través de acertijos, misiones y desafíos, los usuarios desarrollan habilidades en programación y bases de datos.
+            </p>
+
+            <div class="slider-container">
+                <div class="slides">
+                    <div class="slide"><img src="IMG/inicio2.jpg" alt="StepLogic VR"></div>
+                    <div class="slide"><img src="IMG/inicio1.jpg" alt="StepLogic VR"></div>
+                    <div class="slide"><img src="IMG/inicio4.jpg" alt="StepLogic VR"></div>
+                    <div class="slide"><img src="IMG/inicio5.jpg" alt="StepLogic VR"></div>
+                    <div class="slide"><img src="IMG/inicio6.jpg" alt="StepLogic VR"></div>
                 </div>
             </div>
-        </section>
 
-        <section id="mundos" class="section">
-            <div class="container">
-                <h2 class="title">Nuestros Mundos</h2>
-                <div class="worlds-grid">
-                    <div class="world-card">
-                        <img src="img/mundo1.jpg">
-                        <div class="w-info"><h3>Mundo 1: La Ciudad</h3><p>Misterio y suspenso urbano.</p></div>
+            <div style="background: #001f3f; color: white; padding: 40px; border-radius: 15px; margin-top: 30px;">
+                <p>Además, en Stepl<span>∞</span>gic también creamos experiencias personalizadas para empresas, emprendimientos y espacios educativos que buscan innovar en la forma de enseñar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ SECCIÓN: MISIONES ══════════ -->
+    <section id="misiones">
+        <div class="container">
+            <h2>Misiones de Investigación</h2>
+            <div class="section-divider"></div>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 40px; color: #555;">
+                Aquí tienes algunas misiones del primer mundo donde tendrás que resolver un asesinato y un robo,
+                encontrar a cinco sospechosos y bloquear los cajeros de ATMS, ¡buena suerte detective!
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <img src="IMG/mision1.jpg" alt="Misión 1" style="width:100%; border-radius:15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="IMG/mision2.jpg" alt="Bloqueo de ATMS" style="width:100%; border-radius:15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="IMG/mision3.jpg" alt="Comprar la tarjeta en la tienda" style="width:100%; border-radius:15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="IMG/mision4.jpg" alt="Misión 4" style="width:100%; border-radius:15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="IMG/mision5.jpg" alt="Encontrar a los sospechosos" style="width:100%; border-radius:15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="IMG/mision6.jpg" alt="Misión 6" style="width:100%; border-radius:15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="IMG/mision7.jpg" alt="Misión 7" style="width:100%; border-radius:15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="IMG/mision8.PNG" alt="Misión 8" style="width:100%; border-radius:15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ SECCIÓN: MUNDOS ══════════ -->
+    <section id="mundos">
+        <div class="container">
+            <h2>Explora los Mundos</h2>
+            <div class="section-divider"></div>
+
+            <div class="world-box">
+                <details>
+                    <summary>Mundo 1: La Ciudad</summary>
+                    <div class="world-content">
+                        <p>Diseñado dentro de una ciudad llena de suspenso y ansias por descubrir lo que el detective te pide.</p>
+                        <img src="IMG/mundo1.jpg" alt="Mundo 1 La Ciudad">
                     </div>
-                    <div class="world-card">
-                        <img src="img/mundo2.jpg">
-                        <div class="w-info"><h3>Mundo 2: Exterior</h3><p>Naturaleza y lógica abierta.</p></div>
+                </details>
+            </div>
+            <div class="world-box">
+                <details>
+                    <summary>Mundo 2: Exterior</summary>
+                    <div class="world-content">
+                        <p>Diseñado en un entorno exterior para aumentar la trama del juego.</p>
+                        <img src="IMG/mundo2.jpg" alt="Mundo 2 Exterior">
                     </div>
-                    <div class="world-card">
-                        <img src="img/mundo3.jpg">
-                        <div class="w-info"><h3>Mundo 3: La Finca</h3><p>Un entorno rural lleno de nuevos desafíos.</p></div>
+                </details>
+            </div>
+            <div class="world-box">
+                <details>
+                    <summary>Mundo 3: En Desarrollo</summary>
+                    <div class="world-content">
+                        <p>Estamos trabajando en ello para darte la mejor experiencia.</p>
+                        <img src="IMG/mundo3.jpg" alt="Mundo 3 En Desarrollo">
                     </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ SECCIÓN: INDICACIONES ══════════ -->
+    <section id="indicaciones">
+        <div class="container">
+            <h2>Indicaciones para el Detective</h2>
+            <div class="section-divider"></div>
+
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 30px auto;">
+                <p style="font-size: 1.2rem; color: #001f3f; font-weight: bold;">
+                    Aquí tienes algunos requisitos que se te pedirán e indicarán antes de iniciar el juego.
+                </p>
+                <p style="color: #555; margin-top: 10px;">
+                    ¡Presta mucha atención detective! El éxito de tu investigación depende de qué tan bien sigas estas instrucciones dentro del metaverso.
+                </p>
+            </div>
+
+            <div class="slider-container">
+                <div class="slides slides-ind">
+                    <div class="slide"><img src="IMG/requisito1.PNG" alt="Requisito 1"></div>
+                    <div class="slide"><img src="IMG/requisito2.PNG" alt="Requisito 2"></div>
+                    <div class="slide"><img src="IMG/requisito3.PNG" alt="Requisito 3"></div>
+                    <div class="slide"><img src="IMG/requisito4.PNG" alt="Requisito 4"></div>
                 </div>
             </div>
-        </section>
 
-        <section id="equipo" class="section bg-gray">
-            <div class="container">
-                <h2 class="title">Nuestro Equipo</h2>
-                <div class="grid-equipo">
-                    <div class="member">
-                        <img src="IMG/jaime.jpg">
-                        <h4>Jaime Cárdenas</h4>
-                        <p>Desarrollador y Diseño de Experiencia VR.</p>
-                    </div>
-                    <div class="member">
-                        <img src="IMG/mateo.jpg">
-                        <h4>Mateo Padilla</h4>
-                        <p>Especialista en Lógica y Programación.</p>
-                    </div>
-                    <div class="member">
-                        <img src="IMG/nicol.jpg">
-                        <h4>Nicole Pesántez</h4>
-                        <p>Investigación y Diseño Narrativo.</p>
-                    </div>
-                    <div class="member">
-                        <img src="IMG/villa.jpg">
-                        <h4>Adrián Villareal</h4>
-                        <p>Arquitectura de Mundos e Implementación.</p>
-                    </div>
+            <div class="nota-box">
+                <p><strong>Nota importante:</strong> Asegúrate de configurar correctamente tus gafas de Realidad Virtual y contar con un espacio despejado para moverte con seguridad mientras exploras nuestros mundos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ SECCIÓN: EQUIPO ══════════ -->
+    <section id="equipo">
+        <div class="container">
+            <h2>Nuestro Equipo</h2>
+            <div class="section-divider"></div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="IMG/jaime.jpg" alt="Jaime Cárdenas">
+                    <h3>Jaime Cárdenas</h3>
+                    <p>Estudiante de Informática.<br>Mención Aplicaciones Web. 3E2.</p>
+                </div>
+                <div class="team-card">
+                    <img src="IMG/mateo.jpg" alt="Mateo Padilla">
+                    <h3>Mateo Padilla</h3>
+                    <p>Estudiante de Informática.<br>Mención Desarrollo WEB. 3E2.</p>
+                </div>
+                <div class="team-card">
+                    <img src="IMG/nicol.jpg" alt="Nicole Pesántez">
+                    <h3>Nicole Pesántez</h3>
+                    <p>Estudiante de Informática.<br>Mención Desarrollo WEB. 3E2.</p>
+                </div>
+                <div class="team-card">
+                    <img src="IMG/villa.jpg" alt="Adrián Villareal">
+                    <h3>Adrián Villareal</h3>
+                    <p>Estudiante de Informática.<br>Mención Desarrollo WEB. 3E2.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contacto" class="section bg-dark">
-            <div class="container">
-                <h2 class="title">Contáctanos</h2>
-                <div class="contact-flex">
-                    <div class="contact-text">
-                        <p class="accent">En StepLogic no solo resolvemos casos, creamos experiencias.</p>
-                        <p>Diseñamos mundos interactivos que desafían los límites del aprendizaje.</p>
-                        <div class="phone-badge">📞 0981168969</div>
-                    </div>
-                    <div class="contact-imgs">
-                        <img src="IMG/ig.jpg">
-                        <img src="IMG/juego.jpg">
-                    </div>
+    <!-- ══════════ SECCIÓN: CONTACTO ══════════ -->
+    <section id="contacto">
+        <div class="container">
+            <h2>Contáctanos</h2>
+            <div class="section-divider"></div>
+
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 50px auto; line-height: 1.8;">
+                <p style="font-size: 1.2rem; font-weight: bold; color: #001f3f;">
+                    En StepLogic no solo resolvemos casos, creamos nuevas experiencias.
+                </p>
+                <p>
+                    Estamos constantemente diseñando mundos interactivos y misiones que desafían los límites del aprendizaje en Realidad Virtual.
+                    Si tienes una idea innovadora o quieres saber más sobre nuestro proceso de creación en el metaverso, ¡escríbenos!
+                </p>
+
+                <div class="contact-info-box">
+                    <p><strong>📞 Contacto Directo:</strong> 0981168969</p>
+                    <p>🚀 <em>Innovación constante: Llevando la educación al siguiente nivel.</em></p>
                 </div>
             </div>
-        </section>
-    </main>
 
+            <div class="contact-imgs">
+                <img src="IMG/ig.jpg" alt="Proyecto VR">
+                <img src="IMG/juego.jpg" alt="Desarrollo de Experiencias">
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ FOOTER ══════════ -->
     <footer>
-        <p>© StepL<span>∞</span>gic | @StepLogic_</p>
+        <div class="footer-logo">© StepL<span>∞</span>gic</div>
+        <div class="social-links">
+            <p>Follow Us</p>
+            <a href="https://tiktok.com/@StepLogic_" target="_blank">Tiktok / @StepLogic_</a> |
+            <a href="https://instagram.com/StepLogic_" target="_blank">Instagram / @StepLogic_</a>
+        </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- ══════════ SCRIPT: RESALTAR NAV ACTIVO ══════════ -->
     <script>
-        const swiper = new Swiper(".mainSwiper", { 
-            loop: true, 
-            pagination: { el: ".swiper-pagination", clickable: true } 
-        });
-        const btn = document.getElementById('menu-btn');
-        const nav = document.getElementById('nav-list');
-        btn.onclick = () => { nav.classList.toggle('active'); btn.classList.toggle('open'); };
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav ul li a');
+
+        function highlightNav() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', highlightNav);
+        highlightNav();
     </script>
+
 </body>
 </html>
