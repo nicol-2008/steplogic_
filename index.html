@@ -2,204 +2,147 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StepL∞gic | Metaverse Experience</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>StepL∞gic | Metaverse Research</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <nav class="nav-glass">
-        <a href="#inicio" class="logo-container">StepL<span>∞</span>gic</a>
-        <button class="hamburger" id="menu-toggle">
-            <span></span><span></span><span></span>
-        </button>
-        <ul class="nav-links" id="nav-menu">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#misiones">Misiones</a></li>
-            <li><a href="#mundos">Mundos</a></li>
-            <li><a href="#indicaciones">Indicaciones</a></li>
-            <li><a href="#equipo">Equipo</a></li>
-            <li><a href="#contacto">Contáctanos</a></li>
-        </ul>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#inicio" class="logo">StepL<span>∞</span>gic</a>
+            <div class="menu-icon" id="menu-btn">
+                <span></span><span></span>
+            </div>
+            <ul class="nav-menu" id="nav-list">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#misiones">Misiones</a></li>
+                <li><a href="#mundos">Mundos</a></li>
+                <li><a href="#indicaciones">Indicaciones</a></li>
+                <li><a href="#equipo">Equipo</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <main>
-        <section id="inicio" class="panel hero">
-            <div class="container">
-                <h1 class="reveal">Stepl<span>∞</span>gic</h1>
-                <p class="hero-subtitle reveal">Es una experiencia inmersiva en realidad virtual que transforma el aprendizaje en una aventura interactiva. A través de acertijos, misiones y desafíos, los usuarios desarrollan habilidades en programación y bases de datos.</p>
-                
-                <div class="slider-container reveal">
-                    <div class="slides">
-                        <div class="slide"><img src="IMG/inicio2.jpg"></div>
-                        <div class="slide"><img src="IMG/inicio1.jpg"></div>
-                        <div class="slide"><img src="IMG/inicio4.jpg"></div>
-                        <div class="slide"><img src="IMG/inicio5.jpg"></div>
-                        <div class="slide"><img src="IMG/inicio6.jpg"></div>
-                    </div>
-                </div>
-
-                <div class="info-box reveal">
-                    <p>Además, en Stepl<span>∞</span>gic también creamos experiencias personalizadas para empresas, emprendimientos y espacios educativos que buscan innovar en la forma de enseñar.</p>
-                </div>
+    <section id="inicio" class="section hero">
+        <div class="container">
+            <div class="hero-text anim">
+                <h1>StepL<span>∞</span>gic</h1>
+                <p>Experiencia inmersiva en realidad virtual para el aprendizaje de programación. Resuelve acertijos y domina el metaverso.</p>
             </div>
-        </section>
-
-        <section id="misiones" class="panel bg-dark">
-            <div class="container">
-                <h2 class="reveal">Misiones de Investigación</h2>
-                <p class="section-desc reveal">Aquí tienes algunas misiones del primer mundo donde tendrás que resolver un asesinato y un robo, encontrar a cinco sospechosos y bloquear los cajeros de ATMS, ¡buena suerte detective!</p>
-                
-                <div class="misiones-grid reveal">
-                    <img src="IMG/mision1.jpg" alt="Misión 1">
-                    <img src="IMG/mision2.jpg" alt="Misión 2">
-                    <img src="IMG/mision3.jpg" alt="Misión 3">
-                    <img src="IMG/mision4.jpg" alt="Misión 4">
-                    <img src="IMG/mision5.jpg" alt="Misión 5">
-                    <img src="IMG/mision6.jpg" alt="Misión 6">
-                    <img src="IMG/mision7.jpg" alt="Misión 7">
-                    <img src="IMG/mision8.PNG" alt="Misión 8">
+            
+            <div class="swiper mySwiper anim">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="IMG/inicio2.jpg"></div>
+                    <div class="swiper-slide"><img src="IMG/inicio1.jpg"></div>
+                    <div class="swiper-slide"><img src="IMG/inicio4.jpg"></div>
+                    <div class="swiper-slide"><img src="IMG/inicio5.jpg"></div>
+                    <div class="swiper-slide"><img src="IMG/inicio6.jpg"></div>
                 </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="mundos" class="panel">
-            <div class="container">
-                <h2 class="reveal">Explora los Mundos</h2>
-                
-                <div class="world-item reveal">
-                    <div class="world-text">
-                        <h3>Mundo 1: La Ciudad</h3>
-                        <p>Diseñado dentro de una ciudad llena de suspenso y ansias por descubrir lo que el detective te pide.</p>
-                    </div>
-                    <img src="img/mundo1.jpg" alt="Ciudad">
-                </div>
-
-                <div class="world-item reveal reverse">
-                    <div class="world-text">
-                        <h3>Mundo 2: Exterior</h3>
-                        <p>Diseñado en un entorno exterior para aumentar la trama del juego.</p>
-                    </div>
-                    <img src="img/mundo2.jpg" alt="Exterior">
-                </div>
-
-                <div class="world-item reveal">
-                    <div class="world-text">
-                        <h3>Mundo 3: En Desarrollo</h3>
-                        <p>Estamos trabajando en ello para darte la mejor experiencia.</p>
-                    </div>
-                    <img src="img/mundo3.jpg" alt="Desarrollo">
-                </div>
+    <section id="misiones" class="section bg-black">
+        <div class="container">
+            <h2 class="anim">Misiones de Investigación</h2>
+            <div class="misiones-grid">
+                <div class="m-card anim"><img src="IMG/mision1.jpg"></div>
+                <div class="m-card anim"><img src="IMG/mision2.jpg"></div>
+                <div class="m-card anim"><img src="IMG/mision3.jpg"></div>
+                <div class="m-card anim"><img src="IMG/mision4.jpg"></div>
+                <div class="m-card anim"><img src="IMG/mision5.jpg"></div>
+                <div class="m-card anim"><img src="IMG/mision6.jpg"></div>
+                <div class="m-card anim"><img src="IMG/mision7.jpg"></div>
+                <div class="m-card anim"><img src="IMG/mision8.PNG"></div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="indicaciones" class="panel bg-light">
-            <div class="container">
-                <h2 class="reveal">Indicaciones para el Detective</h2>
-                <p class="section-desc reveal" style="color: #001f3f; font-weight: bold;">Aquí tienes algunos requisitos que se te pedirán e indicarán antes de iniciar el juego.</p>
-                
-                <div class="slider-container reveal">
-                    <div class="slides">
-                        <div class="slide"><img src="IMG/requisito1.PNG"></div>
-                        <div class="slide"><img src="IMG/requisito2.PNG"></div>
-                        <div class="slide"><img src="IMG/requisito3.PNG"></div>
-                        <div class="slide"><img src="IMG/requisito4.PNG"></div>
-                    </div>
+    <section id="mundos" class="section">
+        <div class="container">
+            <h2 class="anim">Explora los Mundos</h2>
+            <div class="world-row anim">
+                <div class="w-info">
+                    <h3>Mundo 1: La Ciudad</h3>
+                    <p>Misterio y suspenso en un entorno urbano detallado.</p>
                 </div>
-
-                <div class="alert-box reveal">
-                    <p><strong>Nota importante:</strong> Asegúrate de configurar correctamente tus gafas de Realidad Virtual y contar con un espacio despejado para moverte con seguridad.</p>
-                </div>
+                <div class="w-img"><img src="img/mundo1.jpg"></div>
             </div>
-        </section>
-
-        <section id="equipo" class="panel">
-            <div class="container">
-                <h2 class="reveal">Nuestro Equipo</h2>
-                <div class="team-grid">
-                    <div class="team-card reveal">
-                        <img src="IMG/jaime.jpg" alt="Jaime">
-                        <h3>Jaime Cárdenas</h3>
-                        <p>Estudiante de Informática. Mención Aplicaciones Web. 3E2.</p>
-                    </div>
-                    <div class="team-card reveal">
-                        <img src="IMG/mateo.jpg" alt="Mateo">
-                        <h3>Mateo Padilla</h3>
-                        <p>Estudiante de Informática. Mención Desarrollo WEB. 3E2.</p>
-                    </div>
-                    <div class="team-card reveal">
-                        <img src="IMG/nicol.jpg" alt="Nicole">
-                        <h3>Nicole Pesántez</h3>
-                        <p>Estudiante de Informática. Mención Desarrollo WEB. 3E2.</p>
-                    </div>
-                    <div class="team-card reveal">
-                        <img src="IMG/villa.jpg" alt="Adrián">
-                        <h3>Adrián Villareal</h3>
-                        <p>Estudiante de Informática. Mención Desarrollo WEB. 3E2.</p>
-                    </div>
+            <div class="world-row reverse anim">
+                <div class="w-info">
+                    <h3>Mundo 2: Exterior</h3>
+                    <p>Exploración libre para desafíos lógicos complejos.</p>
                 </div>
+                <div class="w-img"><img src="img/mundo2.jpg"></div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contacto" class="panel bg-dark">
-            <div class="container">
-                <h2 class="reveal">Contáctanos</h2>
-                <div class="contact-flex reveal">
-                    <div class="contact-info">
-                        <p><strong>En StepLogic no solo resolvemos casos, creamos nuevas experiencias.</strong></p>
-                        <p>Estamos diseñando mundos interactivos que desafían los límites del aprendizaje. Si tienes una idea innovadora, ¡escríbenos!</p>
-                        <div class="contact-tag">
-                            <p>📞 0981168969</p>
-                            <p>🚀 Innovación constante</p>
-                        </div>
-                    </div>
-                    <div class="contact-images">
-                        <img src="IMG/ig.jpg" alt="IG">
-                        <img src="IMG/juego.jpg" alt="Juego">
-                    </div>
+    <section id="indicaciones" class="section bg-gray">
+        <div class="container">
+            <h2 class="anim">Indicaciones VR</h2>
+            <div class="swiper mySwiper anim">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="IMG/requisito1.PNG"></div>
+                    <div class="swiper-slide"><img src="IMG/requisito2.PNG"></div>
+                    <div class="swiper-slide"><img src="IMG/requisito3.PNG"></div>
+                    <div class="swiper-slide"><img src="IMG/requisito4.PNG"></div>
                 </div>
+                <div class="swiper-pagination"></div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <section id="equipo" class="section">
+        <div class="container">
+            <h2 class="anim">Nuestro Equipo</h2>
+            <div class="team-grid">
+                <div class="t-card anim"><img src="IMG/jaime.jpg"><h4>Jaime Cárdenas</h4></div>
+                <div class="t-card anim"><img src="IMG/mateo.jpg"><h4>Mateo Padilla</h4></div>
+                <div class="t-card anim"><img src="IMG/nicol.jpg"><h4>Nicole Pesántez</h4></div>
+                <div class="t-card anim"><img src="IMG/villa.jpg"><h4>Adrián Villareal</h4></div>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        <div class="footer-logo">© StepL<span>∞</span>gic</div>
-        <div class="social-links">
-            <a href="https://tiktok.com/@StepLogic_" target="_blank">Tiktok</a> | 
-            <a href="https://instagram.com/StepLogic_" target="_blank">Instagram</a>
-        </div>
+        <p>© StepL<span>∞</span>gic | @StepLogic_</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
     <script>
+        // Inicializar Carrusel (Deslizable)
+        const swiper = new Swiper(".mySwiper", {
+            loop: true,
+            pagination: { el: ".swiper-pagination", clickable: true },
+            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+        });
+
+        // Menú Móvil
+        const btn = document.getElementById('menu-btn');
+        const list = document.getElementById('nav-list');
+        btn.onclick = () => {
+            list.classList.toggle('show');
+            btn.classList.toggle('open');
+        }
+
+        // Animaciones Scroll
         gsap.registerPlugin(ScrollTrigger);
-
-        // Menú Hamburguesa
-        const menuBtn = document.getElementById('menu-toggle');
-        const navMenu = document.getElementById('nav-menu');
-        menuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            menuBtn.classList.toggle('open');
-        });
-
-        // Cerrar menú al clickear link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                menuBtn.classList.remove('open');
-            });
-        });
-
-        // Animaciones de Aparición (Revelar al hacer scroll)
-        gsap.utils.toArray('.reveal').forEach(el => {
+        gsap.utils.toArray('.anim').forEach(el => {
             gsap.from(el, {
-                scrollTrigger: { trigger: el, start: "top 85%" },
-                y: 50,
-                opacity: 0,
-                duration: 1,
-                ease: "power3.out"
+                scrollTrigger: el,
+                y: 40, opacity: 0, duration: 1, ease: "power2.out"
             });
         });
     </script>
